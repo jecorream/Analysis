@@ -13,6 +13,9 @@ replace CoD_r2 = 4 if CoD_r2 == 7 | CoD_r2 == 8
 replace CoD_r2 = 5 if CoD_r2 == 9
 replace CoD_r2 = 6 if CoD_r2 == 10
 **labelling variables
+label define  Fin_r 1 "living comfortably", modify
+label define  Fin_r 2 "doing alright", modify
+label define  Fin_r 3 "just getting by", modify
 label define  Fin_r 4 "Finding it difficult", modify
 label define  CoD_r2 1 "Cancer", modify
 label define  CoD_r2 2 "Cardiovascular disease", modify
