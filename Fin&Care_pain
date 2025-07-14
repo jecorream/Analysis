@@ -40,6 +40,7 @@ margins loc_1w_collapse, at(Fin_r=(1(1)4)) atmeans
 marginsplot, xtitle(Financial Status) ytitle("Predicted Margin") xlabel(, labsize(small)) title("Moderation Analysis")
 * moderation model fit analysis
 nestreg: poisson IPOS_pain_high (Dec_age i.Gender_D_dich i.Fin_r i.CoD_r2 ib1.diff_access ib3.loc_1w_collapse)(i.Fin_r##ib3.loc_1w_collapse), vce(robust) 
+//Sensitivity Analysis//
 * E-value calculation
 matrix list e(b) 
 matrix list e(V) 
@@ -60,4 +61,5 @@ drop if loc_1w_collapse ==3
 drop if loc_1w_collapse ==.
 codebook loc_1w_collapse
 poisson IPOS_pain_high Dec_age i.Gender_D_dich i.Fin_r i.CoD_r2 ib1.diff_access, vce(robust) irr
-
+* Caregiver involvement regression
+poisson IPOS_pain_high Dec_age i.Gender_D_dich i.Fin_r i.CoD_r2 ib1.diff_access i.informal_care, vce(robust) irr
